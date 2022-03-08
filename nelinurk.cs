@@ -6,19 +6,20 @@ using System.Threading.Tasks;
 
 namespace Nelinurk
 {
-    public class Nelinurkk
+    public class Nelinurk
     {
-        double korgus, laius;
+        double laius;
+        double korgus;
         Tuup tuup;
 
-        public Nelinurkk() { }
-        public Nelinurkk(double Korgus, double Laius, Tuup tuup)
+        public Nelinurk() { }
+        public Nelinurk(double Laius, double Korgus, Tuup tuup)
         {
-            korgus = Korgus;
-            laius = Laius;
+            korgus = Laius;
+            laius = Korgus;
             this.tuup = tuup;
         }
-        public Nelinurkk(Tuup tuup)
+        public Nelinurk(Tuup tuup)
         {
             this.tuup = tuup;
         }
@@ -38,12 +39,12 @@ namespace Nelinurk
         }
         public double Pindala()
         {
-            double pindala = korgus * laius;
+            double pindala = laius * korgus;
             return pindala;
         }
         public double Perimetr()
         {
-            double P = korgus * 2 + laius * 2;
+            double P = (laius + korgus) * 2;
             return P;
         }
         public void Figura()
@@ -52,19 +53,19 @@ namespace Nelinurk
             string symbol = Console.ReadLine();
             if (symbol == "1")
             {
-                Nelinurkk ruut = new Nelinurkk(korgus, laius, Tuup.ruut);
+                Nelinurk ruut = new Nelinurk(laius, korgus, Tuup.ruut);
                 Console.WriteLine($"Nelinurga ümbermõõt - {ruut.Perimetr()} cm, pindala - {ruut.Pindala()} cm2 ja nelinurga tüüp on {Tuup.ruut}");
             }
             else if (symbol == "2")
             {
-                Nelinurkk ristkylik = new Nelinurkk(korgus, laius, Tuup.ristkylik);
+                Nelinurk ristkylik = new Nelinurk(laius, korgus, Tuup.ristkylik);
                 Console.WriteLine($"Nelinurga ümbermõõt - {ristkylik.Perimetr()} cm, pindala - {ristkylik.Pindala()} cm2 ja nelinurga tüüp on {Tuup.ristkylik}");
             }
             else if (symbol == "3")
             {
                 Console.WriteLine("Palun kirjuta rombi pikkus - pindala leidmiseks");
                 double pikkus = double.Parse(Console.ReadLine());
-                Nelinurkk romb = new Nelinurkk(korgus, laius, Tuup.romb);
+                Nelinurk romb = new Nelinurk(laius, korgus, Tuup.romb);
                 Console.WriteLine($"Nelinurga ümbermõõt - {romb.Perimetr()} cm, pindala - {pikkus * laius} cm2 ja nelinurga tüüp on {Tuup.romb}");
             }
             else

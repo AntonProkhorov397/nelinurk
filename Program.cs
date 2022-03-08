@@ -10,7 +10,7 @@ namespace Nelinurk
     {
         static void Main(string[] args)
         {
-            Nelinurkk Kujund = new Nelinurkk();
+            Nelinurk Kujund = new Nelinurk();
             Console.WriteLine("Sisetage laius ja kõrgus ");
             Kujund.Laius = double.Parse(Console.ReadLine());
             Kujund.Korgus = double.Parse(Console.ReadLine());
